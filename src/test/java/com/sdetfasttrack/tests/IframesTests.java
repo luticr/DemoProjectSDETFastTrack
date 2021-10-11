@@ -3,6 +3,7 @@ package com.sdetfasttrack.tests;
 import com.sdetfasttrack.pages.IframePage;
 import com.sdetfasttrack.utilities.Driver;
 import org.testng.annotations.Test;
+import org.testng.xml.dom.Tag;
 
 import static org.testng.Assert.assertTrue;
 
@@ -11,6 +12,7 @@ public class IframesTests {
     IframePage iframePage=new IframePage();
 
     @Test
+    @Tag(name = "smoke")
     public void iframeTest(){
         //1. Go to website: http://practice.cybertekschool.com/iframe
         Driver.getDriver().get("http://practice.cybertekschool.com/iframe");
