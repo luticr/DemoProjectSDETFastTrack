@@ -2,10 +2,20 @@ package com.sdetfasttrack.pages;
 
 import com.sdetfasttrack.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WindowHandlePage {
+
+    public WindowHandlePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
+    @FindBy(xpath = "//a[.='Click Here']")
+    public WebElement clickHereButton;
+
 
     //1. Go to website: http://practice.cybertekschool.com/windows
     //2. Assert: Title is “Practice”

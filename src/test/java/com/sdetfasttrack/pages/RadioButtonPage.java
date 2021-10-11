@@ -1,8 +1,32 @@
 package com.sdetfasttrack.pages;
 
+import com.sdetfasttrack.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 
 public class RadioButtonPage {
+
+    public RadioButtonPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
+
+    @FindBy(xpath = "(//div[@class='panel-body']/label/input)[1]")
+    public WebElement maleRadioButton;
+
+    @FindBy(xpath = "(//div[@class='panel-body']/label/input)[2]")
+    public WebElement femaleRadioButton;
+
+    @FindBy(xpath = "//button[@id='buttoncheck']")
+    public WebElement getValueButton;
+
+
+    @FindBy(xpath = "//p[@class='radiobutton']")
+    public WebElement getValueAsText;
+
+
     //TC #1:radio buttons
     //1.GO TO: https://www.seleniumeasy.com/test/basic-radiobutton-demo.html
     //2. Confirm radio button #Male is NOT  enabled by default

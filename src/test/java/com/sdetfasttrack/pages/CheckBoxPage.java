@@ -1,6 +1,33 @@
 package com.sdetfasttrack.pages;
 
+import com.sdetfasttrack.utilities.Driver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 public class CheckBoxPage {
+
+    // and this which is stands for this class
+
+    public CheckBoxPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
+
+    @FindBy(xpath = "//input[@id='box2']")
+    public WebElement checkBox2Button;
+
+    @FindBy(xpath = "//input[@id='box1']")
+    public WebElement checkBox1Button;
+
+    @FindBy(xpath = "//input[@id='isAgeSelected']")
+    public WebElement checkBox3Button;
+
+    @FindBy(xpath = "//div[.='Success - Check box is checked']")
+    public WebElement successText;
+
+
+
+
     //TC #1:checkboxes
     //1. Go to http://practice.cybertekschool.com/checkboxes
     //2. Confirm checkbox #1 is NOT selected by default

@@ -1,6 +1,30 @@
 package com.sdetfasttrack.pages;
 
+import com.sdetfasttrack.utilities.Driver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
 public class IframePage {
+
+    public IframePage(){
+
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
+
+    @FindBy(id = "mce_0_ifr")
+    public WebElement iframe;
+
+    public String iframeId="mce_0_ifr";
+
+    public int iframeIndex=0;
+
+    @FindBy(xpath = "//p[.='Your content goes here.']")
+    public WebElement textDisplayed;
+
+
+
     //1. Go to website: http://practice.cybertekschool.com/iframe
     //2. Locate as WebElement
     //3.Pass index number
