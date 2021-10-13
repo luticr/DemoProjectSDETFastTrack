@@ -14,13 +14,13 @@ public class UploadPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id = "file-upload")
+    @FindBy(xpath = "//input[@id='file-upload']")
     public WebElement uploadFile;
 
-    @FindBy(id = "file-submit")
+    @FindBy(xpath = "//input[@id='file-submit']")
     public WebElement submitFile;
 
-    @FindBy(id = "uploaded-files")
+    @FindBy(xpath = "//div[@id='uploaded-files']")
     public WebElement uploadedFileExt;
 
     @FindBy(xpath = "//h3[.='File Uploaded!']")
